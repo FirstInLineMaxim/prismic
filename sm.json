@@ -1,0 +1,6 @@
+{
+  "apiEndpoint": "https://ganztagstest.prismic.io/api/v2",
+  "libraries": [
+    "@/slices"
+  ]
+}
