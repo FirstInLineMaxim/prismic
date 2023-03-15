@@ -1,0 +1,14 @@
+{
+  "_cts": {
+    "homepage": {}
+  },
+  "slices": {
+    "HomepageImageHeading": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "HeroHeading": {}
+  }
+}
