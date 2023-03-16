@@ -1,3 +1,4 @@
+import { LngSwitcher } from "./LngSwitcher";
 import * as prismic from "@prismicio/client";
 import sm from "../../sm.json";
 import { components } from "../../slices";
@@ -10,6 +11,7 @@ export const getServerSideProps = async (context) => {
   //gets params from the index /params
   const { lng } = context.params;
   //contects to prismicClient
+  //just to make the params match the prismic locals
   const getLanguage = (lng) => {
     if (lng == "de") return "en-de";
     if (lng == "fr") return "fr-fr";
@@ -24,7 +26,6 @@ export const getServerSideProps = async (context) => {
 };
 const Page = ({ page }) => {
   const router = useRouter();
-  const [language, setLanguage] = useState();
   const { lng } = router.query;
   const handleLanguage = (e) => {
     if (e.target.checked) {
@@ -44,25 +45,7 @@ const Page = ({ page }) => {
       </Head>
       <nav className="flex justify-around pt-4">
         <span>{page.type}</span>
-        <div className="flex align-baseline">
-          <span class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-            en
-          </span>
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              value=""
-              class="sr-only peer"
-              onChange={(e) => handleLanguage(e)}
-              checked={lng == "de"}
-            />
-
-            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-            <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-              de
-            </span>
-          </label>
-        </div>
+        <LngSwitcher e={e} handleLanguage={handleLanguage} lng={lng} />
       </nav>
       <main className="container mx-auto">
         <section className="h-screen py-24">
