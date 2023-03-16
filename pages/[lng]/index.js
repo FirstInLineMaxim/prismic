@@ -1,4 +1,4 @@
-import { LngSwitcher } from "./LngSwitcher";
+import { LngSwitcher } from "../../components/LngSwitcher";
 import * as prismic from "@prismicio/client";
 import sm from "../../sm.json";
 import { components } from "../../slices";
@@ -43,9 +43,9 @@ const Page = ({ page }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className="flex justify-around pt-4">
+      <nav className="container flex justify-around pt-4 mx-auto">
         <span>{page.type}</span>
-        <LngSwitcher e={e} handleLanguage={handleLanguage} lng={lng} />
+        <LngSwitcher handleLanguage={handleLanguage} lng={lng} />
       </nav>
       <main className="container mx-auto">
         <section className="h-screen py-24">

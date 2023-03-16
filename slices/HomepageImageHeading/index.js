@@ -15,6 +15,9 @@ const HomepageImageHeading = ({ slice }) => {
           src={slice.primary.image.url}
           alt={slice.primary.image.alt}
           fill
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
           style={{ objectFit: "contain" }}
         />
       </div>
