@@ -12,6 +12,13 @@
           "placeholder": ""
         }
       },
+      "pagetitle": {
+        "type": "Text",
+        "config": {
+          "label": "pageTitle",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

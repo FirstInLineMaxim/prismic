@@ -1,9 +1,9 @@
+import { Footer } from "../../components/Footer";
 import { LngSwitcher } from "../../components/LngSwitcher";
 import * as prismic from "@prismicio/client";
 import sm from "../../sm.json";
 import { components } from "../../slices";
 import { SliceZone } from "@prismicio/react";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
@@ -27,6 +27,7 @@ export const getServerSideProps = async (context) => {
 const Page = ({ page }) => {
   const router = useRouter();
   const { lng } = router.query;
+
   const handleLanguage = (e) => {
     if (e.target.checked) {
       router.push("/de");
@@ -43,14 +44,15 @@ const Page = ({ page }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className="container flex justify-around pt-4 mx-auto">
-        <span>{page.type}</span>
-        <LngSwitcher handleLanguage={handleLanguage} lng={lng} />
-      </nav>
-      <main className="container mx-auto">
-        <section className="h-screen py-24">
+      <main className="container mx-auto h-screen flex flex-col">
+        <nav className=" flex justify-between pt-4 ">
+          <span>{page.type}</span>
+          <LngSwitcher handleLanguage={handleLanguage} lng={lng} />
+        </nav>
+        <section className=" py-24 grow">
           <SliceZone slices={page.data.slices} components={components} />
         </section>
+        <Footer />
       </main>
     </>
   );

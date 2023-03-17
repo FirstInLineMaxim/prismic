@@ -32,13 +32,15 @@ const HeroHeading = ({ slice }) => (
   //   `}</style>
   // </section>
   <div className="w-full h-1/2">
-    <div className="w-1/2 pr-14">
-      <span className={"text-6xl"}>
+    <div className="w-1/2 h-full pr-14">
+      <div
+        className={"text-base sm:text-xl md:text-2xl lg:text-4xl xl:text-6xl"}
+      >
         <PrismicRichText field={slice.primary.title} />
-      </span>
-      <span className="text-xl bold">
+      </div>
+      <div className="mt-5  text-xs sm:text-base md:text-md lg:text-lg xl:text-xl bold">
         <PrismicRichText field={slice.primary.description} />
-      </span>
+      </div>
     </div>
   </div>
 );

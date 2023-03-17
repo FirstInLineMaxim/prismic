@@ -6,20 +6,19 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
-/** Content for footer documents */
-type FooterDocumentData = Record<string, never>;
-/**
- * footer document from Prismic
- *
- * - **API ID**: `footer`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type FooterDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<FooterDocumentData>, "footer", Lang>;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
+    /**
+     * pageTitle field in *Homepage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.pagetitle
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    pagetitle: prismicT.KeyTextField;
     /**
      * Slice Zone field in *Homepage*
      *
@@ -47,7 +46,7 @@ type HomepageDocumentDataSlicesSlice = HomepageImageHeadingSlice | HeroHeadingSl
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
-export type AllDocumentTypes = FooterDocument | HomepageDocument;
+export type AllDocumentTypes = HomepageDocument;
 /**
  * Primary content in Footer → Primary
  *
@@ -220,6 +219,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { FooterDocumentData, FooterDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HeroHeadingSliceDefaultPrimary, HeroHeadingSliceDefault, HeroHeadingSliceVariation, HeroHeadingSlice, HomepageImageHeadingSliceDefaultPrimary, HomepageImageHeadingSliceDefault, HomepageImageHeadingSliceVariation, HomepageImageHeadingSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HeroHeadingSliceDefaultPrimary, HeroHeadingSliceDefault, HeroHeadingSliceVariation, HeroHeadingSlice, HomepageImageHeadingSliceDefaultPrimary, HomepageImageHeadingSliceDefault, HomepageImageHeadingSliceVariation, HomepageImageHeadingSlice };
     }
 }
