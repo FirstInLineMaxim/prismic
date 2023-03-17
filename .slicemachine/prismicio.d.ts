@@ -48,65 +48,6 @@ type HomepageDocumentDataSlicesSlice = HomepageImageHeadingSlice | HeroHeadingSl
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
 export type AllDocumentTypes = HomepageDocument;
 /**
- * Primary content in Footer → Primary
- *
- */
-interface FooterSliceDefaultPrimary {
-    /**
-     * Title field in *Footer → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: footer.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *Footer → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: footer.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-    /**
-     * date field in *Footer → Primary*
-     *
-     * - **Field Type**: Date
-     * - **Placeholder**: *None*
-     * - **API ID Path**: footer.primary.date
-     * - **Documentation**: https://prismic.io/docs/core-concepts/date
-     *
-     */
-    date: prismicT.DateField;
-}
-/**
- * Default variation for Footer Slice
- *
- * - **API ID**: `default`
- * - **Description**: `Footer`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type FooterSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FooterSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *Footer*
- *
- */
-type FooterSliceVariation = FooterSliceDefault;
-/**
- * Footer Shared Slice
- *
- * - **API ID**: `footer`
- * - **Description**: `Footer`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type FooterSlice = prismicT.SharedSlice<"footer", FooterSliceVariation>;
-/**
  * Primary content in HeroHeading → Primary
  *
  */
@@ -219,6 +160,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, HeroHeadingSliceDefaultPrimary, HeroHeadingSliceDefault, HeroHeadingSliceVariation, HeroHeadingSlice, HomepageImageHeadingSliceDefaultPrimary, HomepageImageHeadingSliceDefault, HomepageImageHeadingSliceVariation, HomepageImageHeadingSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, HeroHeadingSliceDefaultPrimary, HeroHeadingSliceDefault, HeroHeadingSliceVariation, HeroHeadingSlice, HomepageImageHeadingSliceDefaultPrimary, HomepageImageHeadingSliceDefault, HomepageImageHeadingSliceVariation, HomepageImageHeadingSlice };
     }
 }

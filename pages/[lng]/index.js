@@ -35,7 +35,7 @@ const Page = ({ page }) => {
       router.push("/fr");
     }
   };
-
+  console.log(page);
   return (
     <>
       <Head>
@@ -46,7 +46,7 @@ const Page = ({ page }) => {
       </Head>
       <main className="container mx-auto h-screen flex flex-col">
         <nav className=" flex justify-between pt-4 ">
-          <span>{page.type}</span>
+          <span className="uppercase">{page.data.pagetitle}</span>
           <LngSwitcher handleLanguage={handleLanguage} lng={lng} />
         </nav>
         <section className=" py-24 grow">
