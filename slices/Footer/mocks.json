@@ -1,0 +1,41 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Available"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Adipisicing labore excepteur sunt laboris minim. Dolore ullamco exercitation est aliqua proident Lorem proident dolor. In excepteur eiusmod officia excepteur."
+            }
+          }
+        ]
+      },
+      "date": {
+        "__TYPE__": "FieldContent",
+        "type": "Date",
+        "value": "2016-06-29"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

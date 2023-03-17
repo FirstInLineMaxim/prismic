@@ -1,6 +1,7 @@
 {
   "_cts": {
-    "homepage": {}
+    "homepage": {},
+    "footer": {}
   },
   "slices": {
     "HomepageImageHeading": {
@@ -9,6 +10,7 @@
         "items": {}
       }
     },
-    "HeroHeading": {}
+    "HeroHeading": {},
+    "Footer": {}
   }
 }
